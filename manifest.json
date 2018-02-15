@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+  "name": "Youtube block videos",
+  "description": "Youtube block videos",
+  "version": "1.0",
+   "background": {
+    "scripts":["background.js","jquery-3.2.1.js"]
+  },
+  "options_page": "options.html",
+  "icons": { "16": "icon16.png",
+           "48": "icon48.png",
+          "128": "icon128.png"},
+  "browser_action": {
+          "default_icon": "off.png",
+          "default_title": "Youtube block videos"            
+        } ,
+      "content_scripts": [
+    { "run_at":"document_start",
+      "matches": ["*://www.youtube.com/*"],
+      "js": ["jquery-3.2.1.js", "contentscript.js"]
+    }
+  ],
+  "permissions": [
+          "*://www.youtube.com/*","storage"
+        ]
+          }
